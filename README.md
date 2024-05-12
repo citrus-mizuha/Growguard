@@ -42,10 +42,19 @@ If a number such as "4.9.0" is returned, the installation is complete. If you en
 - Plant-guarder (original Device)
 [Plant-guarder](https://example.com) is very cheap and stable Device (This is a dedicated device developed by mizuha.).
 ### Device settings and data management(Recommend environment)
-- Raspberry pi (self)x
+- Raspberry pi (self)
 - MacOS
 - WindowsOS
 - LinuxOS
 If you use "Plant-guarder", you have to set by dedicated app.
 
-## 
+## How to use
+### How to setup
+If you use Raspberry Pi :
+
+If you use "Plant-guarder" :
+'''shell
+./setup # windows : .\setup
+'''
+And Please 
+### How to manage datas
