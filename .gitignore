@@ -1,3 +1,4 @@
 # Gitignore
 /.git/
-/.idea/
+/.idea
+/plant/
