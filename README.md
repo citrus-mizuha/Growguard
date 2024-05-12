@@ -35,7 +35,6 @@ print(influx.__version__)
 print(client.__version__)
 ```
 If a number such as "4.9.0" is returned, the installation is complete. If you encounter an error, please check it yourself.
-### How to use
 
 ## Compatible devices
 ### Compatible devices
@@ -43,7 +42,7 @@ If a number such as "4.9.0" is returned, the installation is complete. If you en
 - Plant-guarder (original Device)
 [Plant-guarder](https://example.com) is very cheap and stable Device (This is a dedicated device developed by mizuha.).
 ### Device settings and data management(Recommend environment)
-- Raspberry pi (self)
+- Raspberry pi (self)x
 - MacOS
 - WindowsOS
 - LinuxOS
