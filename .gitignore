@@ -1,5 +1,6 @@
 # Gitignore
 /.git/
-/.idea
+/.idea/
 /plant/
-qodana.yaml
+/qodana.yaml
+*/__pycache__/
