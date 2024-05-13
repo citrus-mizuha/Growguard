@@ -1,7 +1,3 @@
-import numpy as np
-import influxdb
-import influxdb_client
-import Adafruit_GPIO
 import time
 import sys
 

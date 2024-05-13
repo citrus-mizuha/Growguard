@@ -1,6 +1,6 @@
 import radef
 import os
 
+py_v = radef.py_v()
 print("process start : "+radef.timestamp())
-print(radef.py_v())
-os.system("tree")
+print(py_v)

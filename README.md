@@ -53,8 +53,10 @@ If you use "Plant-guarder", you have to set by dedicated app.
 If you use Raspberry Pi :
 
 If you use "Plant-guarder" :
-'''shell
-./setup # windows : .\setup
-'''
+```shell
+./grow-guarder/setup
+  # windows : 
+    .\grow-guarder\setup
+```
 And Please 
 ### How to manage datas
