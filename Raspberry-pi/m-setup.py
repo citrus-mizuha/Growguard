@@ -9,8 +9,28 @@ import platform
 start = time.perf_counter()
 os.system("pip install -U pip")
 conda_w = os.system("hash conda")
-osx=("macOS","Ubuntu", "CentOS", "Unknown")
-windows=("Windows")
+osx = ("macOS", "Ubuntu", "CentOS", "Unknown")
+windows = "Windows"
+
+def conda_s():
+    os.system("conda update --all")
+    os.system("conda update -n base conda")
+    while True:
+        conda_plant = subprocess.check_output(["conda", "env", "list"]).decode("utf-8")
+        if "plant" in conda_plant:
+            os.system("conda activate plant")
+            os.system("conda install -n plant --file conda_env.txt")
+            os.system("conda update --all")
+            break
+        else:
+            while True:
+                conda = input("It will make new env. name=plant Agree? (y/n)")
+                if conda.lower() in ["y", "yes"]:
+                    os.system("conda env create -f=conda_env.yml")
+                    os.system("conda activate plant")
+                    os.system("conda update --all")
+                    break
+
 
 def os_type():
     system = platform.system()
@@ -31,28 +51,13 @@ def os_type():
     else:
         return "Unknown"
 
-os_type=os_type()
 
-print("\nOS Type:", os_type+"\n")
+os_type = os_type()
+
+print("\nOS Type:", os_type + "\n")
 if os_type.lower() in ["macos", "centos", "ubuntu", "unknown"]:
     if conda_w == 0:
-        os.system("conda update --all")
-        os.system("conda update -n base conda")
-        while True:
-            conda_plant = subprocess.check_output(["conda", "env", "list"]).decode("utf-8")
-            if "plant" in conda_plant:
-                os.system("conda activate plant")
-                os.system("conda install -n plant --file conda_env.txt")
-                os.system("conda update --all")
-                break
-            else:
-                while True:
-                    conda_y = input("It will make new env. name=plant Agree? (y/n)")
-                    if conda_y.lower() in ["y", "yes"]:
-                        os.system("conda env create -f=conda_env.yml")
-                        os.system("conda activate plant")
-                        os.system("conda update --all")
-                        break
+        conda_s()
     else:
         while True:
             pyvenv = input("It will make a env class. name=plant Agree? (y/n)")
@@ -62,24 +67,8 @@ if os_type.lower() in ["macos", "centos", "ubuntu", "unknown"]:
                 print("pip install was end.")
                 break
 if os_type.lower() in ["windows"]:
-    if os.system("conda")==0:
-        os.system("conda update --all")
-        os.system("conda update -n base conda")
-        while True:
-            conda_plant = subprocess.check_output(["conda", "env", "list"]).decode("utf-8")
-            if "plant" in conda_plant:
-                os.system("conda activate plant")
-                os.system("conda install -n plant --file conda_env.txt")
-                os.system("conda update --all")
-                break
-            else:
-                while True:
-                    conda = input("It will make new env. name=plant Agree? (y/n)")
-                    if conda.lower() in ["y", "yes"]:
-                        os.system("conda env create -f=conda_env.yml")
-                        os.system("conda activate plant")
-                        os.system("conda update --all")
-                        break
+    if os.system("conda") == 0:
+        conda_s()
     else:
         while True:
             pyvenv = input("It will make a env class. name=plant Agree? (y/n)")
@@ -89,9 +78,10 @@ if os_type.lower() in ["windows"]:
                 print("pip install was end.")
                 break
 if os_type.lower() in ["raspbian"]:
-    raspbian = input("It will be build in This Device. Do you want to build? (Both client system and manage system will setup in this Device.) (y/n)")
+    raspbian = input(r"It will be build in This Device. Do you want to build? (y/n)")
+    # (Both client system and manage system will set up in this Device.) をどう追加するか
     if raspbian.lower() in ["y", "yes"]:
-        print("Starting.... ")
+        print(r"Starting.... ")
         time.sleep(10)
         # また今度書く
 end = time.perf_counter()
