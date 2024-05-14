@@ -1,4 +1,8 @@
 # GrowGuard
+[![image](https://img.shields.io/pypi/v/pipenv.svg)](https://python.org/pypi/pipenv)
+[![image](https://img.shields.io/pypi/l/pipenv.svg)](https://python.org/pypi/pipenv)
+[![image](https://img.shields.io/pypi/pyversions/pipenv.svg)](https://python.org/pypi/pipenv)
+-------------------------------------------------
 ## Developers
 | Name                                              | position            |
 |---------------------------------------------------|---------------------|
@@ -7,34 +11,15 @@
 ## About
 ### Responsibility
 We do not assume any responsibility for the use of our service.([in detail](LICENSE))
-### How to install
-- If you use conda : 
+### How to set up
+- Client Device
 ```shell
-$ conda create -n plant python=3.12 #Although it is not necessary to create a new environment, we recommend creating a new environment.
-$ conda activate plant
-$ conda install opencv numpy matplotlib & pip install influxdb influxdb-client
-# if you use MacOS : 
-$ brew install opencv
+cd Raspberry-pi
+python3 c-setup.py # There are some things that must be approved. Please read carefully.
 ```
-- Else :
-```shell
-$ python3 -m venv plant
-  # if you using MacOS or LinuxOS : 
-    $ source plant/bin/activate
-  # if you using WindowsOS : 
-    $ .\plant\bin\activate
-$ pip install opencv numpy matplotlib influxdb influxdb-client
-```
-in the either case :
-```python
-import cv2
-import influxdb as influx
-import influxdb_client as client
-print(cv2.__version__)
-print(influx.__version__)
-print(client.__version__)
-```
-If a number such as "4.9.0" is returned, the installation is complete. If you encounter an error, please check it yourself.
+- Management Device
+If you use MacOS, Please Download from [here](""). 
+If you use WindowsOS, Please Download from here
 
 ## Compatible devices
 ### Compatible devices

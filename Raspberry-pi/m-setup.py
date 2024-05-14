@@ -3,6 +3,9 @@ import time
 import subprocess
 import platform
 
+# This is a management device's setup code.
+# If you want to set up on client device, Please execute c-setup.py.
+
 start = time.perf_counter()
 os.system("pip install -U pip")
 conda_w = os.system("hash conda")
@@ -81,7 +84,7 @@ if os_type.lower() in ["windows"]:
         while True:
             pyvenv = input("It will make a env class. name=plant Agree? (y/n)")
             if pyvenv.lower() in ["y", "yes"]:
-                os.system("\env\bin\activate")
+                os.system(r"\env\bin\activate")
                 os.system("pip install -r pip_env.txt")
                 print("pip install was end.")
                 break
