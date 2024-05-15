@@ -16,7 +16,7 @@ machine = platform.machine()
 conda_linux_rasp = "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-aarch64.sh"
 conda_linux_x86 = "https://repo.anaconda.com/archive/Anaconda3-2024.02-1-Linux-x86_64.sh"
 conda_linux_arm64 = "https://repo.anaconda.com/archive/Anaconda3-2024.02-1-Linux-aarch64.sh"  # AWS Graviton2/ARM64
-conda_linux_special = "https://repo.anaconda.com/archive/Anaconda3-2024.02-1-Linux-s390x.sh"  # Linux on IBM Z & LinuxONE
+conda_linux_special = "https://repo.anaconda.com/archive/Anaconda3-2024.02-1-Linux-s390x.sh"  # Linux onIBM Z & LinuxONE
 conda_macos_arm64 = "https://repo.anaconda.com/archive/Anaconda3-2024.02-1-MacOSX-arm64.sh"
 conda_macos_x86 = "https://repo.anaconda.com/archive/Anaconda3-2024.02-1-MacOSX-x86_64.sh"
 
@@ -29,7 +29,8 @@ def conda_set():
         if "plant" in conda_plant:
             conda_prefix = subprocess.check_output(['conda', 'info', '--base']).decode('utf-8').strip()
             activate_script = os.path.join(conda_prefix, 'etc', 'profile.d', 'conda.sh')
-            command = f"source {activate_script} && conda activate plant && conda install -n plant --file conda_env.txt && conda update --all"
+            command = (f"source {activate_script} && conda activate plant && "
+                       f"conda install -n plant --file conda_env.txt && conda update --all")
             os.system(f"bash -c '{command}'")
             break
         else:
