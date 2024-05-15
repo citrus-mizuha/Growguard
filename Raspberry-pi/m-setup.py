@@ -27,17 +27,21 @@ def conda_set():
     while True:
         conda_plant = subprocess.check_output(["conda", "env", "list"]).decode("utf-8")
         if "plant" in conda_plant:
-            os.system("conda activate plant")
-            os.system("conda install -n plant --file conda_env.txt")
-            os.system("conda update --all")
+            conda_prefix = subprocess.check_output(['conda', 'info', '--base']).decode('utf-8').strip()
+            activate_script = os.path.join(conda_prefix, 'etc', 'profile.d', 'conda.sh')
+            command = f"source {activate_script} && conda activate plant && conda install -n plant --file conda_env.txt && conda update --all"
+            os.system(f"bash -c '{command}'")
             break
         else:
             while True:
                 conda = input("It will make new env. name=plant Agree? (y/n)")
                 if conda.lower() in ["y", "yes"]:
                     os.system("conda env create -f=conda_env.yml")
-                    os.system("conda activate plant")
-                    os.system("conda update --all")
+                    # Activate the newly created environment
+                    conda_prefix = subprocess.check_output(['conda', 'info', '--base']).decode('utf-8').strip()
+                    activate_script = os.path.join(conda_prefix, 'etc', 'profile.d', 'conda.sh')
+                    command = f"source {activate_script} && conda activate plant && conda update --all"
+                    os.system(f"bash -c '{command}'")
                     break
 
 
@@ -72,9 +76,34 @@ def conda_install():
     else:
         print("No suitable Conda installer found for your system.")
 
+def finish():
+    end = time.perf_counter()
+    print("Process End. \ntime taken : " + '{:.2f}'.format((end - start) / 60) + " m")
+
 
 print("\nOS Type : " + system)
 print("Machine Type : " + machine + "\n")
+
+while True:
+    ok = input('''
+Are you using a device other than Raspberry pi?
+If you are using a Raspberry pi, enter "n" If you are using another OS, enter"y" : ''')
+    if ok.lower() in ["y", "yes"]:
+        print("Ok, It will be run.")
+        break
+    if ok.lower() in ["n", "no"]:
+        while True:
+            check = input("If you using Raspberry pi, Please write 'Raspberrypi' here. : ")
+            if check.lower() in ["raspberrypi"]:
+                print("Ok, It will run the another setup code.")
+                subprocess.run(["python3", "ra-setup.py"])
+                finish()
+                exit()
+            else:
+                print("Please execute one more time.")
+                finish()
+                exit()
+
 # Windows OSの場合のインストール
 if system.lower() in ["windows", "windows os"]:
     if os.system("conda") == 0:
@@ -122,5 +151,5 @@ else:
                         print("pip install was end.")
                         break
 
-end = time.perf_counter()
-print("Process End. \ntime taken : " + '{:.2f}'.format((end - start) / 60) + " m")
+
+finish()
