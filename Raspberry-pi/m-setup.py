@@ -84,6 +84,7 @@ def finish():
 
 print("\nOS Type : " + system)
 print("Machine Type : " + machine + "\n")
+subprocess.run(["python3", "-m", "pip", "install", "SomePackage"])
 
 while True:
     ok = input('''
