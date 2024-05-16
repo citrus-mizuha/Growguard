@@ -13,8 +13,7 @@ osx = ("macOS", "Ubuntu", "CentOS", "Unknown")
 windows = "Windows"
 system = platform.system()
 machine = platform.machine()
-conda_linux_rasp = "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-aarch64.sh"
-conda_linux_x86 = "https://repo.anaconda.com/archive/Anaconda3-2024.02-1-Linux-x86_64.sh"
+conda_linux_x86 = "https://repo.anaconda.com/archive/Anaconda3-2024.02-1-Linux-x86_64.sh"  # x86 LinuxOS
 conda_linux_arm64 = "https://repo.anaconda.com/archive/Anaconda3-2024.02-1-Linux-aarch64.sh"  # AWS Graviton2/ARM64
 conda_linux_special = "https://repo.anaconda.com/archive/Anaconda3-2024.02-1-Linux-s390x.sh"  # Linux onIBM Z & LinuxONE
 conda_macos_arm64 = "https://repo.anaconda.com/archive/Anaconda3-2024.02-1-MacOSX-arm64.sh"
@@ -51,10 +50,7 @@ def conda_install():
         if machine == "x86_64":
             conda_url = conda_linux_x86
         elif machine == "aarch64":
-            if "raspberrypi" in platform.uname().version:
-                conda_url = conda_linux_rasp
-            else:
-                conda_url = conda_linux_arm64
+            conda_url = conda_linux_arm64
         elif machine == "s390x":
             conda_url = conda_linux_special
         else:
@@ -76,6 +72,7 @@ def conda_install():
         os.system("bash conda.sh")
     else:
         print("No suitable Conda installer found for your system.")
+
 
 def finish():
     end = time.perf_counter()
@@ -112,14 +109,14 @@ if system.lower() in ["windows", "windows os"]:
         conda_set()
     else:
         while True:
-            agree_condainstall = input("Do you want to install conda to this WindowsPC? (y/n)")
-            if agree_condainstall.lower() in ["y", "yes"]:
+            agr_conda_install = input("Do you want to install conda to this WindowsPC? (y/n)")
+            if agr_conda_install.lower() in ["y", "yes"]:
                 print("Now, it will be install...")
                 os.system("cd")
                 os.system("curl https://repo.anaconda.com/archive/Anaconda3-2024.02-1-Windows-x86_64.exe -o conda.exe")
                 os.system("conda.exe")
                 break
-            if agree_condainstall.lower() in ["n", "no"]:
+            if agr_conda_install.lower() in ["n", "no"]:
                 while True:
                     pyvenv = input("It will make a env class. name=plant Agree? (y/n)")
                     if pyvenv.lower() in ["y", "yes"]:
@@ -152,6 +149,5 @@ else:
                         os.system("pip install -r pip_env.txt")
                         print("pip install was end.")
                         break
-
 
 finish()
