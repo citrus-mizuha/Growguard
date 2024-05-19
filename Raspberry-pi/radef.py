@@ -29,3 +29,4 @@ def pip_update():
 def repository_update():
     subprocess.run(["git","pull"])
     print("Repository was updated.")
+
