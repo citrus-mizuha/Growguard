@@ -8,8 +8,11 @@ import os
 def timestamp(x):
     if x == "ymd":
         return time.strftime("%Y/%m/%d")
+    if x == "hms":
+        return time.strftime("%H:%M:%S")
     else:
         return time.strftime('%Y/%m/%d %H:%M:%S')
+
 
 def py_v():
     return sys.version

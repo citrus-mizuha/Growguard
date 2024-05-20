@@ -37,8 +37,17 @@ update_end = float(time.perf_counter())
 updatetime = update_end - update_first
 update_minutes = int(round(updatetime // 60, 1))
 update_seconds = int(round(updatetime % 60, 1))
-print("Update Process End : " + radef.timestamp("ymd") + "\ntime taken : " + str(update_minutes) + "m " + str(update_seconds) + "s")
-print("Main process will start.\nPlease wait.")
+print("Update Process End : " + radef.timestamp("hms") + "\ntime taken : " + str(update_minutes) + "m " + str(update_seconds) + "s")
+print("Main process will start. Please wait.")
 time.sleep(2)
+mainprocess_start = float(time.perf_counter())
 
+
+
+
+mainprocess_end = float(time.perf_counter())
+mainprocesstime = mainprocess_end - mainprocess_start
+mainprocess_minutes = int(round(mainprocesstime // 60, 1))
+mainprocess_seconds = int(round(mainprocesstime % 60, 1))
+print("Main Process End : " + radef.timestamp("hms") + "\ntime taken : " + str(mainprocess_minutes) + "m " + str(mainprocess_seconds) + "s")
 
