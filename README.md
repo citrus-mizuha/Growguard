@@ -1,7 +1,7 @@
 # GrowGuard
 [![image](https://img.shields.io/pypi/v/pipenv.svg)](https://python.org/pypi/pipenv)
 [![image](https://img.shields.io/pypi/l/pipenv.svg)](https://python.org/pypi/pipenv)
-[![image](https://img.shields.io/pypi/pyversions/pipenv.svg)](https://python.org/pypi/pipenv)
+[![image](https://img.shields.io/badge/Python-3.9+-yellow?style=flat&logo=python)]()
 [![Qodana](https://github.com/citrus-mizuha/growguard/actions/workflows/qodana_code_quality.yml/badge.svg)](https://github.com/citrus-mizuha/growguard/actions/workflows/qodana_code_quality.yml)
 [![Discord](https://img.shields.io/badge/Discord-Join-blue?style=flat&logo=discord)](https://discord.com/invite/26Eqw3Bt?utm_source=Discord%20Widget&utm_medium=Connect&username=)
 [![Qiita](https://img.shields.io/badge/Qiita-Visit-green?style=flat&logo=qiita)](https://qiita.com/citrus-mizuha)
