@@ -2,6 +2,7 @@
 [![image](https://img.shields.io/pypi/v/pipenv.svg)](https://python.org/pypi/pipenv)
 [![image](https://img.shields.io/pypi/l/pipenv.svg)](https://python.org/pypi/pipenv)
 [![image](https://img.shields.io/pypi/pyversions/pipenv.svg)](https://python.org/pypi/pipenv)
+[![Qodana](https://github.com/citrus-mizuha/growguard/actions/workflows/qodana_code_quality.yml/badge.svg)](https://github.com/citrus-mizuha/growguard/actions/workflows/qodana_code_quality.yml)
 -------------------------------------------------
 ## Developers
 | Name                                              | position            |
