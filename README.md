@@ -19,6 +19,7 @@ please join this Discord Server [Citrus-mizuha's Projects](https://discord.com/i
 ## About
 - [日本語版](/Japanese-Readme.md)
 - [中文版](/Chinese-Readme.md)
+
 This project is developed by third-year junior high school students in Japan (at the start of the project)
 We are developing a device with irrigation functions for plants, nutrient management functions, humidity control functions (and a function to control the air conditioner in the case of indoors), etc., and we are developing code that can achieve similar functions on the Raspberry pi, although it is one step lower in terms of performance.
 (Please be assured that the part where money is involved is left to a trusted adult) (Donation is [here]())
