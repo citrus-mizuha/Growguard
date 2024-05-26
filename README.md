@@ -5,11 +5,11 @@
 [![Qodana](https://github.com/citrus-mizuha/growguard/actions/workflows/qodana_code_quality.yml/badge.svg)](https://github.com/citrus-mizuha/growguard/actions/workflows/qodana_code_quality.yml)
 [![Discord](https://img.shields.io/badge/Discord-Join-blue?style=flat&logo=discord)](https://discord.com/invite/26Eqw3Bt?utm_source=Discord%20Widget&utm_medium=Connect&username=)
 [![Qiita](https://img.shields.io/badge/Qiita-Visit-green?style=flat&logo=qiita)](https://qiita.com/citrus-mizuha)
-
-- [日本語版](/Japanese-Readme.md)
-- [中文版](/Chinese-Readme.md)
-
 -------------------------------------------------
+
+[日本語版](/Japanese-Readme.md)
+[中文版](/Chinese-Readme.md)
+
 ## Developers
 | Name                                              | position            |
 |---------------------------------------------------|---------------------|
