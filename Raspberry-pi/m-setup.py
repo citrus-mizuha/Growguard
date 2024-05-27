@@ -7,6 +7,7 @@ import platform
 # If you want to set up on client device, Please execute c-setup.py.
 
 start = time.perf_counter()
+print("This code is setup code for management device.")
 os.system("pip install -U pip")
 conda_w = os.system("hash conda")
 osx = ("macOS", "Ubuntu", "CentOS", "Unknown")
@@ -18,7 +19,6 @@ conda_linux_arm64 = "https://repo.anaconda.com/archive/Anaconda3-2024.02-1-Linux
 conda_linux_special = "https://repo.anaconda.com/archive/Anaconda3-2024.02-1-Linux-s390x.sh"  # Linux onIBM Z & LinuxONE
 conda_macos_arm64 = "https://repo.anaconda.com/archive/Anaconda3-2024.02-1-MacOSX-arm64.sh"
 conda_macos_x86 = "https://repo.anaconda.com/archive/Anaconda3-2024.02-1-MacOSX-x86_64.sh"
-
 
 def conda_set():
     os.system("conda update --all")
@@ -83,8 +83,9 @@ print("\nOS Type : " + system)
 print("Machine Type : " + machine + "\n")
 subprocess.run(["python3", "-m", "pip", "install", "SomePackage"])
 
+#Check of the Raspberry pi
 while True:
-    ok = input('''
+    ok = input(r'''
 Are you using a device other than Raspberry pi?
 If you are using a Raspberry pi, enter "n" If you are using another OS, enter"y" : ''')
     if ok.lower() in ["y", "yes"]:
@@ -151,3 +152,6 @@ else:
                         break
 
 finish()
+
+
+KeyboardInterrupt
